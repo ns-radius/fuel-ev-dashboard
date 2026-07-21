@@ -1043,11 +1043,32 @@ class Component extends DCLogic {
     return { fuel, ev };
   }
 
-  DATE_OPTIONS = [
-    { key:'p7', label:'Previous 7 days', range:'30/06/2026 - 07/07/2026' },
-    { key:'p30', label:'Previous 30 days', range:'07/06/2026 - 07/07/2026' },
-    { key:'custom', label:'Custom date range', range:'01/01/2026 - 31/03/2026' },
-  ];
+  fmtDate(d) {
+    const p = (n) => String(n).padStart(2, '0');
+    return p(d.getDate()) + '/' + p(d.getMonth() + 1) + '/' + d.getFullYear();
+  }
+  dateRangeStr(daysBack) {
+    const end = new Date();
+    const start = new Date();
+    start.setDate(end.getDate() - daysBack);
+    return this.fmtDate(start) + ' - ' + this.fmtDate(end);
+  }
+  trailing8wkLabel() {
+    const loc = this.state.lang === 'de' ? 'de-DE' : 'en-GB';
+    const end = new Date();
+    const start = new Date();
+    start.setDate(end.getDate() - 55);
+    const opt = { day:'numeric', month:'short' };
+    const lead = this.state.lang === 'de' ? 'Letzte 8 Wochen · ' : 'Trailing 8 weeks · ';
+    return lead + start.toLocaleDateString(loc, opt) + ' – ' + end.toLocaleDateString(loc, opt) + ' ' + end.getFullYear();
+  }
+  get DATE_OPTIONS() {
+    return [
+      { key:'p7', label:'Previous 7 days', range:this.dateRangeStr(7) },
+      { key:'p30', label:'Previous 30 days', range:this.dateRangeStr(30) },
+      { key:'custom', label:'Custom date range', range:this.dateRangeStr(90) },
+    ];
+  }
 
   WEEKS = ['W19','W20','W21','W22','W23','W24','W25','W26'];
   DAYS = Array.from({length:30}, (_, i) => String(i + 1));
@@ -1416,7 +1437,7 @@ class Component extends DCLogic {
       const up = pct >= 0;
       const trend = (up ? '▲ ' : '▼ ') + Math.abs(pct).toFixed(0) + '% ' + this.t('vs start of period');
       const trendColor = up ? '#0FD46C' : '#e51b22';
-      chart = { title:o.title, current:o.current, period:this.t('Trailing 8 weeks · 5 May – 30 Jun 2026'), color:o.color, trend, trendColor, bigPoints, dotX:dot[0].toFixed(1), dotY:dot[1].toFixed(1), gridY, yLabels, xLabels:weeks.slice(0,n) };
+      chart = { title:o.title, current:o.current, period:this.trailing8wkLabel(), color:o.color, trend, trendColor, bigPoints, dotX:dot[0].toFixed(1), dotY:dot[1].toFixed(1), gridY, yLabels, xLabels:weeks.slice(0,n) };
     }
 
     const c = this.buildChart();
