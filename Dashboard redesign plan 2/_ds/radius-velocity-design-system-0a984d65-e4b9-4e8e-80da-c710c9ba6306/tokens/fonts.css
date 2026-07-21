@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Radius Velocity — Webfonts
+   --------------------------------------------------------------------------
+   Manrope is the primary brand typeface (headings + body). Inter and
+   Montserrat appear in supporting/legacy UI. All three are genuine Google
+   typefaces, declared here from the Google Fonts CDN.
+
+   NOTE FOR PRODUCTION: these load from fonts.gstatic.com. To fully self-host,
+   drop woff2 binaries into assets/fonts/ and replace the @import with local
+   @font-face rules. Flagged to the team — see readme.md › Typography.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&family=Montserrat:wght@400;600&display=swap');

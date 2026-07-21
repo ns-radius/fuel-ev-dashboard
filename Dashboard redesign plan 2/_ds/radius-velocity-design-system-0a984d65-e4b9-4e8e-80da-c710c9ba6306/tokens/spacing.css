@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Radius Velocity — Spacing, radii, elevation, borders, layout
+   Derived from observed component metrics (button padding 15/30, card radius
+   10, page gutter 80, container 1440 etc).
+   ========================================================================== */
+
+:root {
+  /* --- Spacing scale (the 4 / 8 base with brand-specific 10/15/30) ----- */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   10px;   /* common inner gap */
+  --space-4:   15px;   /* button vertical padding */
+  --space-5:   20px;
+  --space-6:   30px;   /* button horizontal padding, card padding */
+  --space-7:   40px;
+  --space-8:   60px;   /* section sub-gap */
+  --space-9:   80px;   /* page gutter / section padding */
+  --space-10:  128px;  /* footer block padding */
+
+  /* --- Radii ----------------------------------------------------------- */
+  --radius-xs:   3px;    /* small pills / tags */
+  --radius-sm:   5px;    /* spec cards, country selector */
+  --radius-md:   10px;   /* DEFAULT — buttons, cards, inputs, tiles */
+  --radius-pill: 999px;  /* fully-rounded pills, avatars */
+
+  /* --- Borders --------------------------------------------------------- */
+  --border-width: 1px;
+  --border-width-strong: 2px;
+  /* Radius cards use an inset hairline rather than a real border so the box
+     keeps its exact size. */
+  --hairline:        inset 0 0 0 1px var(--border-default);
+  --hairline-soft:   inset 0 0 0 1px var(--border-soft);
+  --hairline-strong: inset 0 0 0 2px var(--black);
+
+  /* --- Elevation ------------------------------------------------------- */
+  /* The system is deliberately flat. Real shadows appear only on floating
+     UI (carousel arrows, sticky bars). */
+  --shadow-none: none;
+  --shadow-sm:   0 4px 4px 0 rgba(0,0,0,0.05);   /* floating controls */
+  --shadow-md:   0 4px 4px 0 rgba(0,0,0,0.10);   /* sticky / anchor bars */
+
+  /* --- Layout ---------------------------------------------------------- */
+  --container-desktop: 1440px;  /* 1536px+  */
+  --container-laptop:  1240px;  /* 1280–1535px */
+  --container-tablet:  900px;   /* 1024–1279px */
+  --container-compact: 680px;   /* 768–1023px */
+  --container-mobile:  600px;   /* 640–767px */
+  --gutter-desktop:    80px;
+  --gutter-mobile:     20px;
+
+  /* --- Breakpoints (reference values) ---------------------------------- */
+  --bp-mobile:  640px;
+  --bp-tablet:  768px;
+  --bp-laptop:  1024px;   /* the type-scale switch point */
+  --bp-desktop: 1280px;
+  --bp-wide:    1536px;
+
+  /* --- Motion ---------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast:   120ms;  /* @kind other */
+  --dur-base:   200ms;  /* @kind other */
+  --dur-slow:   320ms;  /* @kind other */
+}

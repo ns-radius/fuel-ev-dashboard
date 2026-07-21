@@ -1,0 +1,12 @@
+# claude's dev only
+screenshots/
+
+# dependencies?
+node_modules/
+
+# macOS-specific files
+.DS_Store
+.thumbnail
+
+# misc
+*.code-workspace

@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/radius-velocity-design-system-0a984d65-e4b9-4e8e-80da-c710c9ba6306/tokens/fonts.css">
+  <script src="_ds/radius-velocity-design-system-0a984d65-e4b9-4e8e-80da-c710c9ba6306/_ds_bundle.js"></script>
+  <style>
+    .wf-link { color:#3f4248; text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+    .wf-loz { display:inline-flex; align-items:center; justify-content:center; width:95px; height:18px; border-radius:9999px; font-size:9px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }
+    .wf-hatch { background-image:repeating-linear-gradient(45deg,#cfcfd2 0 4px,#e7e7e9 4px 8px); }
+    .wf-hatch-overlay { background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.55) 0 2px,transparent 2px 5px); }
+    .wf-map { background-color:#ececed; background-image:linear-gradient(#e0e0e2 1px,transparent 1px),linear-gradient(90deg,#e0e0e2 1px,transparent 1px); background-size:48px 48px; }
+  </style>
+</helmet>
+<div style="min-height:100vh; background:#e9e9ea; padding:40px; box-sizing:border-box; font-family:Manrope,system-ui,sans-serif; color:#1c1d20;">
+
+  <!-- frame meta -->
+  <div style="width:1480px; margin:0 auto 14px; display:flex; align-items:baseline; justify-content:space-between;">
+    <div style="font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:#6f727a;">Velocity Dashboard · Lo-fi Wireframe</div>
+    <div style="font-size:12px; color:#9a9da3;">Desktop · 1440px content · structure only — colour, brand &amp; final components applied in hi-fi</div>
+  </div>
+
+  <!-- page frame -->
+  <div style="width:1480px; margin:0 auto; background:#ffffff; border:1px solid #d9d9d9; border-radius:10px; box-sizing:border-box; padding:32px 20px;">
+
+    <!-- ============ 5.1 PAGE HEADER ============ -->
+    <header style="display:flex; flex-direction:column; gap:14px; padding-bottom:24px; border-bottom:1px solid #ededee;">
+      <div style="display:flex; align-items:center; justify-content:flex-end; gap:20px; font-size:13px;">
+        <span class="wf-link">Help</span>
+        <span style="color:#d9d9d9;">·</span>
+        <span class="wf-link">Jump to map</span>
+      </div>
+      <div style="display:flex; align-items:flex-end; gap:24px;">
+        <div style="display:flex; flex-direction:column; gap:6px; width:230px; flex-shrink:0;">
+          <span style="font-size:11px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:#9a9da3;">Date range</span>
+          <div style="display:flex; align-items:center; gap:10px; height:44px; padding:0 16px; background:#f7f7f8; border:1px solid #c4c4c7; border-radius:10px; min-width:230px; justify-content:space-between;">
+            <span style="font-size:14px; font-weight:600;">Last 30 days</span>
+            <span style="font-size:13px; color:#6f727a;">1 Jun – 30 Jun 2026 ▾</span>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:6px; align-items:center; text-align:center;">
+          <h1 style="margin:0; font-size:30px; font-weight:700; letter-spacing:-0.02em;">Fuel &amp; Charge Cards</h1>
+          <div style="font-size:13px; color:#9a9da3;">Northgate Logistics Ltd · Account #4471082</div>
+        </div>
+        <div style="width:230px; flex-shrink:0;"></div>
+      </div>
+    </header>
+
+    <!-- ============ 5.2b FUEL vs EV COMPARISON ============ -->
+    <!-- combined totals row -->
+    <section style="margin-top:32px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Total Transactions</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">1,284</span>
+      </div>
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Total Net Spend</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">£68,450</span>
+      </div>
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Total Cards</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">28</span>
+      </div>
+    </section>
+
+    <!-- split: fuel (left) vs ev (right) -->
+    <section style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+      <!-- FUEL SIDE -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="width:14px; height:12px; background:#bcbcc0; border-radius:2px;"></span>
+          <h2 style="margin:0; font-size:16px; font-weight:700;">Fuel</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:stretch;">
+          <div style="display:flex; flex-direction:column; gap:6px; background:#f7f7f8; border-radius:8px; padding:14px 16px;">
+            <span style="font-size:12px; color:#6f727a;">Total Fuel Transactions</span>
+            <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">1,042</span>
+            <span style="font-size:11px; color:#9a9da3;">Avg. 58 transactions / card • 18 cards</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; background:#f7f7f8; border-radius:8px; padding:14px 16px;">
+            <span style="font-size:12px; color:#6f727a;">Total Fuel Spend</span>
+            <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">£52,934</span>
+            <span style="font-size:11px; color:#9a9da3;">Avg. £1,176.31 / driver · 45 drivers</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; background:#f7f7f8; border-radius:8px; padding:14px 16px;">
+            <span style="font-size:12px; color:#6f727a;">Total Volume</span>
+            <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">48,210 L</span>
+            <span style="font-size:11px; color:#9a9da3;">Avg. 46.3 L / transaction</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; background:#f7f7f8; border-radius:8px; padding:14px 16px;">
+            <span style="font-size:12px; color:#6f727a;">Average Price / L</span>
+            <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">142.8 p</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EV SIDE -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span class="wf-hatch" style="width:14px; height:12px; border-radius:2px;"></span>
+          <h2 style="margin:0; font-size:16px; font-weight:700;">EV</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:stretch;">
+          <div style="display:flex; flex-direction:column; gap:6px; background:#f7f7f8; border-radius:8px; padding:14px 16px;">
+            <span style="font-size:12px; color:#6f727a;">Total EV Transactions</span>
+            <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">242</span>
+            <span style="font-size:11px; color:#9a9da3;">Avg. 24 transactions / card • 10 cards</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; background:#f7f7f8; border-radius:8px; padding:14px 16px;">
+            <span style="font-size:12px; color:#6f727a;">Total EV Spend</span>
+            <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">£13,515</span>
+            <span style="font-size:11px; color:#9a9da3;">Avg. £901.03 / driver · 15 drivers</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; background:#f7f7f8; border-radius:8px; padding:14px 16px;">
+            <span style="font-size:12px; color:#6f727a;">Total Charge</span>
+            <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">17,108 kWh</span>
+            <span style="font-size:11px; color:#9a9da3;">Avg. 70.7 kWh / transaction</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; background:#f7f7f8; border-radius:8px; padding:14px 16px;">
+            <span style="font-size:12px; color:#6f727a;">Average Price / kWh</span>
+            <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">79.0 p</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5.3 CARDS OVERVIEW ============ -->
+    <section style="margin-top:32px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+      <!-- FUEL CARDS PANEL -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">Fuel Cards</h2>
+          <div style="display:flex; gap:16px; font-size:13px;">
+            <span class="wf-link">Manage Cards</span>
+            <span class="wf-link">Order Cards</span>
+          </div>
+        </div>
+        <!-- column header -->
+        <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:#9a9da3; padding-bottom:8px; border-bottom:1px solid #ededee;">
+          <span>Brand</span>
+          <span>Cards</span>
+          <span style="text-align:center;">Status (A · E · S)</span>
+          <span style="text-align:right;">Spend</span>
+        </div>
+        <!-- brand rows -->
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <!-- row -->
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span class="wf-loz" style="background:#FBCE07; color:#000000;">Shell</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">8 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">6</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-weight:700; border:1px solid #8a8d92; border-radius:9999px; padding:1px 8px; cursor:pointer;">2 exp ↗</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£24,180.40</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span class="wf-loz" style="background:#009D00; color:#ffffff;">BP</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">5 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">5</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£15,902.10</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span class="wf-loz" style="background:#0047BA; color:#ffffff;">Esso</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">3 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">2</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-weight:700; border:1px solid #8a8d92; border-radius:9999px; padding:1px 8px; cursor:pointer;">1 exp ↗</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£9,640.75</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span class="wf-loz" style="background:#FF0014; color:#ffffff;">Texaco</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">2 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">1</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-weight:700; border:1px solid #8a8d92; border-radius:9999px; padding:1px 8px;">1 stop</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£3,210.55</span>
+          </div>
+        </div>
+        <!-- panel total -->
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid #ededee;">
+          <span style="font-size:13px; color:#6f727a;">18 fuel cards total</span>
+          <span style="font-size:15px; font-weight:700; font-variant-numeric:tabular-nums;">£52,933.80</span>
+        </div>
+      </div>
+
+      <!-- EV CARDS PANEL -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">EV Charge Cards</h2>
+          <div style="display:flex; gap:16px; font-size:13px;">
+            <span class="wf-link">Manage Cards</span>
+            <span class="wf-link">Order Cards</span>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:#9a9da3; padding-bottom:8px; border-bottom:1px solid #ededee;">
+          <span>Network</span>
+          <span>Cards</span>
+          <span style="text-align:center;">Status (A · E · S)</span>
+          <span style="text-align:right;">Spend</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span style="font-size:14px; font-weight:600;">BP Pulse</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">4 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">4</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£6,420.18</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span style="font-size:14px; font-weight:600;">Shell Recharge</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">3 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">2</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-weight:700; border:1px solid #8a8d92; border-radius:9999px; padding:1px 8px; cursor:pointer;">1 exp ↗</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£3,980.42</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span style="font-size:14px; font-weight:600;">Pod Point</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">2 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">2</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£2,115.80</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span style="font-size:14px; font-weight:600;">Gridserve</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">1 card</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">1</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£999.00</span>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid #ededee;">
+          <span style="font-size:13px; color:#6f727a;">10 charge cards total</span>
+          <span style="font-size:15px; font-weight:700; font-variant-numeric:tabular-nums;">£13,515.40</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5.4 ALERTS ROW ============ -->
+    <section style="margin-top:32px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+      <!-- FUEL ALERTS (populated) -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">Fuel Alerts</h2>
+          <span class="wf-link" style="font-size:13px;">View all alerts →</span>
+        </div>
+        <!-- severity counts -->
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; background:#5a5d62;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Critical</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">3</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:2px; background:#a8abb0;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Warning</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">7</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Info</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">2</span>
+          </div>
+        </div>
+        <!-- top alerts -->
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; gap:10px; align-items:flex-start;">
+            <span style="width:10px; height:10px; border-radius:50%; background:#5a5d62; margin-top:4px; flex-shrink:0;"></span>
+            <div style="display:flex; flex-direction:column; gap:1px;">
+              <span style="font-size:13px; font-weight:600;">Volume · Card •4821 exceeded 90 L single fill</span>
+              <span style="font-size:12px; color:#9a9da3;">D. Okafor · Shell M6 Lymm · today 06:14</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; align-items:flex-start;">
+            <span style="width:10px; height:10px; border-radius:2px; background:#a8abb0; margin-top:4px; flex-shrink:0;"></span>
+            <div style="display:flex; flex-direction:column; gap:1px;">
+              <span style="font-size:13px; font-weight:600;">Time-of-day · 4 transactions outside working hours</span>
+              <span style="font-size:12px; color:#9a9da3;">across 3 cards · this week</span>
+            </div>
+          </div>
+        </div>
+        <span style="font-size:11px; color:#b0b3b8;">Alert types: volume · time-of-day · frequency · product</span>
+      </div>
+
+      <!-- EV ALERTS (empty state — types TBC) -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">EV Alerts</h2>
+          <span style="font-size:11px; color:#b0b3b8; border:1px dashed #c4c4c7; border-radius:6px; padding:2px 8px;">Alert model TBC</span>
+        </div>
+        <div style="flex:1; min-height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center;">
+          <span style="width:34px; height:34px; border-radius:50%; border:2px solid #a8abb0; display:flex; align-items:center; justify-content:center; font-size:16px; color:#6f727a;">✓</span>
+          <span style="font-size:14px; font-weight:600;">No alerts for this period</span>
+          <span style="font-size:12px; color:#9a9da3; max-width:260px;">EV alert types are being defined with engineering. Empty-state shown for now.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5.5 CHART + SIDEBAR ============ -->
+    <section style="margin-top:32px; display:grid; grid-template-columns:1fr 280px; gap:32px; align-items:start;">
+
+      <!-- CHART PANEL -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <h2 style="margin:0; font-size:16px; font-weight:700;">Spend &amp; Volume</h2>
+            <span style="font-size:12px; color:#9a9da3;">Trailing 8 weeks · 5 May – 30 Jun 2026</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <!-- metric toggle -->
+            <div style="display:flex; border:1px solid #c4c4c7; border-radius:8px; overflow:hidden;">
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; background:#1c1d20; color:#fff;">Spend</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; border-left:1px solid #c4c4c7; cursor:pointer;">Volume</span>
+            </div>
+            <!-- series toggle -->
+            <div style="display:flex; border:1px solid #c4c4c7; border-radius:8px; overflow:hidden;">
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; cursor:pointer;">Fuel</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; border-left:1px solid #c4c4c7; cursor:pointer;">EV</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; background:#1c1d20; color:#fff; border-left:1px solid #c4c4c7;">Both</span>
+            </div>
+            <!-- sync toggle -->
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="width:34px; height:18px; border-radius:9999px; background:#d9d9d9; position:relative; display:inline-block;"><span style="position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:50%; background:#fff; border:1px solid #b9b9b9;"></span></span>
+              <span style="font-size:12px; color:#6f727a;">Sync to date range</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- bar chart placeholder -->
+        <div style="display:flex; gap:14px;">
+          <!-- y axis -->
+          <div style="display:flex; flex-direction:column; justify-content:space-between; align-items:flex-end; height:220px; font-size:11px; color:#b0b3b8; font-variant-numeric:tabular-nums; padding-bottom:22px;">
+            <span>£12k</span><span>£9k</span><span>£6k</span><span>£3k</span><span>£0</span>
+          </div>
+          <!-- plot -->
+          <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+            <div style="display:grid; grid-template-columns:repeat(8,1fr); gap:18px; height:220px; align-items:end; border-bottom:1px solid #d9d9d9;">
+              <!-- week groups: fuel solid + ev hatched -->
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:62%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:24%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:70%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:28%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:55%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:22%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:80%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:33%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:72%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:30%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:88%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:38%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:76%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:34%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:92%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:42%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+            </div>
+            <!-- x axis -->
+            <div style="display:grid; grid-template-columns:repeat(8,1fr); gap:18px; font-size:11px; color:#b0b3b8; text-align:center; font-variant-numeric:tabular-nums;">
+              <span>W19</span><span>W20</span><span>W21</span><span>W22</span><span>W23</span><span>W24</span><span>W25</span><span>W26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- legend (segment colours = brand / network) -->
+        <div style="display:flex; flex-direction:column; gap:10px; padding-top:8px; border-top:1px solid #ededee;">
+          <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+            <span style="font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:#9a9da3; width:56px;">Fuel</span>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="width:14px; height:12px; border-radius:2px; background:#8d9095;"></span><span style="font-size:12px; color:#6f727a;">Shell</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="width:14px; height:12px; border-radius:2px; background:#a5a8ad;"></span><span style="font-size:12px; color:#6f727a;">BP</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="width:14px; height:12px; border-radius:2px; background:#bcbfc4;"></span><span style="font-size:12px; color:#6f727a;">Esso</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="width:14px; height:12px; border-radius:2px; background:#d3d6da;"></span><span style="font-size:12px; color:#6f727a;">Texaco</span></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+            <span style="font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:#9a9da3; width:56px;">EV</span>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="position:relative; width:14px; height:12px; border-radius:2px; background:#8d9095; display:inline-block;"><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:2px;"></span></span><span style="font-size:12px; color:#6f727a;">BP Pulse</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="position:relative; width:14px; height:12px; border-radius:2px; background:#a5a8ad; display:inline-block;"><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:2px;"></span></span><span style="font-size:12px; color:#6f727a;">Shell Recharge</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="position:relative; width:14px; height:12px; border-radius:2px; background:#bcbfc4; display:inline-block;"><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:2px;"></span></span><span style="font-size:12px; color:#6f727a;">Pod Point</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="position:relative; width:14px; height:12px; border-radius:2px; background:#d3d6da; display:inline-block;"><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:2px;"></span></span><span style="font-size:12px; color:#6f727a;">Gridserve</span></div>
+          </div>
+          <span style="font-size:11px; color:#b0b3b8;">Hatched bars = EV · solid bars = fuel. Shades become brand colours in hi-fi.</span>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside style="display:flex; flex-direction:column; gap:20px;">
+        <!-- invoice summary -->
+        <div style="border:1px solid #d9d9d9; border-radius:10px; padding:20px; display:flex; flex-direction:column; gap:12px;">
+          <h3 style="margin:0; font-size:14px; font-weight:700;">Latest Invoice</h3>
+          <div style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+            <div style="display:flex; justify-content:space-between;"><span style="color:#6f727a;">Period</span><span style="font-weight:600;">May 2026</span></div>
+            <div style="display:flex; justify-content:space-between;"><span style="color:#6f727a;">Total</span><span style="font-weight:700; font-variant-numeric:tabular-nums;">£61,204.18</span></div>
+            <div style="display:flex; justify-content:space-between;"><span style="color:#6f727a;">Due</span><span style="font-weight:600;">14 Jul 2026</span></div>
+            <div style="display:flex; justify-content:space-between; align-items:center;"><span style="color:#6f727a;">Status</span><span style="font-size:12px; font-weight:600; border:1px solid #8a8d92; border-radius:9999px; padding:1px 10px;">Outstanding</span></div>
+          </div>
+          <span class="wf-link" style="font-size:13px;">View invoice →</span>
+        </div>
+
+        <!-- insights pdf -->
+        <div style="border:1px solid #d9d9d9; border-radius:10px; padding:20px; display:flex; flex-direction:column; gap:10px;">
+          <h3 style="margin:0; font-size:14px; font-weight:700;">Latest Insights</h3>
+          <div style="display:flex; gap:12px; align-items:center;">
+            <span style="width:38px; height:46px; border:1px solid #c4c4c7; border-radius:4px; background:#f7f7f8; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#8a8d92;">PDF</span>
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <span style="font-size:13px; font-weight:600;">Q2 Fleet Fuel Report</span>
+              <span style="font-size:12px; color:#9a9da3;">Generated 28 Jun 2026</span>
+            </div>
+          </div>
+          <span class="wf-link" style="font-size:13px;">Download report →</span>
+        </div>
+
+        <!-- marketing cross-sell (subtle, delineated) -->
+        <div style="border:1px solid #d9d9d9; border-radius:10px; padding:20px; background:#f7f7f8; display:flex; flex-direction:column; gap:10px;">
+          <span style="font-size:10px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#b0b3b8;">Sponsored</span>
+          <span style="font-size:14px; font-weight:700;">Switch to Velocity Telematics</span>
+          <span style="font-size:12px; color:#6f727a; line-height:1.5;">See live vehicle tracking alongside your fuel and charge data.</span>
+          <span class="wf-link" style="font-size:13px;">Learn more →</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============ 5.6 STATION MAP ============ -->
+    <section style="margin-top:32px;">
+      <div style="border:1px solid #d9d9d9; border-radius:10px; overflow:hidden;">
+        <!-- map header -->
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:18px 24px; border-bottom:1px solid #ededee;">
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <h2 style="margin:0; font-size:16px; font-weight:700;">Fuel &amp; Charge Station Map</h2>
+            <span style="font-size:12px; color:#9a9da3;">Stations used this period · click a pin for detail</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <!-- legend -->
+            <div style="display:flex; gap:14px;">
+              <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px; height:12px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); background:#7c7f84;"></span><span style="font-size:12px; color:#6f727a;">Fuel</span></div>
+              <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px; height:12px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); border:2px solid #7c7f84; box-sizing:border-box;"></span><span style="font-size:12px; color:#6f727a;">EV</span></div>
+            </div>
+            <!-- filter toggle -->
+            <div style="display:flex; border:1px solid #c4c4c7; border-radius:8px; overflow:hidden;">
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; cursor:pointer;">Fuel</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; border-left:1px solid #c4c4c7; cursor:pointer;">EV</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; background:#1c1d20; color:#fff; border-left:1px solid #c4c4c7;">Both</span>
+            </div>
+          </div>
+        </div>
+        <!-- map body -->
+        <div class="wf-map" style="position:relative; height:340px;">
+          <!-- cluster -->
+          <div style="position:absolute; left:30%; top:38%; width:48px; height:48px; border-radius:50%; background:#7c7f84; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; transform:translate(-50%,-50%); border:3px solid #fff;">24</div>
+          <!-- fuel pins (solid) -->
+          <div style="position:absolute; left:52%; top:30%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#7c7f84; border:2px solid #fff;"></div>
+          <div style="position:absolute; left:66%; top:55%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#7c7f84; border:2px solid #fff;"></div>
+          <div style="position:absolute; left:44%; top:64%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#7c7f84; border:2px solid #fff;"></div>
+          <div style="position:absolute; left:78%; top:34%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#7c7f84; border:2px solid #fff;"></div>
+          <!-- ev pins (outline) -->
+          <div style="position:absolute; left:60%; top:44%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#fff; border:2px solid #7c7f84;"></div>
+          <div style="position:absolute; left:72%; top:66%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#fff; border:2px solid #7c7f84;"></div>
+          <div style="position:absolute; left:38%; top:48%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#fff; border:2px solid #7c7f84;"></div>
+          <!-- sample pin tooltip -->
+          <div style="position:absolute; left:52%; top:30%; transform:translate(-50%,-130%); background:#fff; border:1px solid #c4c4c7; border-radius:8px; padding:8px 12px; min-width:150px; display:flex; flex-direction:column; gap:2px;">
+            <span style="font-size:12px; font-weight:700;">Shell · M6 Lymm</span>
+            <span style="font-size:11px; color:#9a9da3;">38 transactions · £4,210.55</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- deprioritised note -->
+    <div style="margin-top:24px; font-size:11px; color:#b0b3b8; line-height:1.5;">
+      Removed from dashboard per plan: account start date (now the date-picker lower bound only) · admin contact details (moved to Account Settings).
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer style="margin-top:24px; padding-top:18px; border-top:1px solid #ededee; display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12px; color:#9a9da3;">
+      <span>© 2026 Velocity · Northgate Logistics Ltd</span>
+      <span class="wf-link" style="font-size:13px;">Report a Problem</span>
+    </footer>
+
+  </div>
+</div>
+</x-dc>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "Fuel & Charge Cards Wireframe";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Project support.js may predate runtime default-seeding; push via bridge.
+  if (isDc && window.__dcSetProps && window.__dcRootName) {
+    try {
+      const dpEl = document.querySelector('script[data-dc-script]');
+      const meta = JSON.parse((dpEl && dpEl.getAttribute('data-props')) || '{}');
+      const bag = {};
+      for (const k in meta)
+        if (k[0] !== '$' && meta[k] && meta[k].default !== undefined)
+          bag[k] = meta[k].default;
+      if (Object.keys(bag).length) {
+        window.__dcSetProps(window.__dcRootName(), bag);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    } catch (e) {}
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…}. Decks own their own @page.
+  // Wrappers (body, …) lose padding+margin so the frame sits at (0,0); the
+  // frame itself loses only margin — its padding is INSIDE the measured
+  // rect and must stay, or content shifts and leaves a gap at bottom/right.
+  var __m = null;
+  try { __m = (() => {
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false } };
+  }
+
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage };
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body, rootPxW = false;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    rootPxW = authoredPx(el, 'width');
+    if (rootPxW) break;
+  }
+  if (!rootPxW) rootPxW = authoredPx(el, 'width');
+
+  // @page{size:letter} alone is a flowing doc; with a px-width root it's a
+  // fixed sheet pretending to be paper — fall through and size to render.
+  if (paperPage && !rootPxW) {
+    return { kind: 'paper-doc', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: ≥2 visible non-fixed children, each with authored px width
+  // AND height, all within ±2px of each other. Off unless the page opts in
+  // via data-om-multi-frame on the stop element — guards against card grids
+  // and pricing tables that match the geometry but aren't separate canvases.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var cands = [];
+    for (var k = 0; k < el.children.length; k++) {
+      var ch = el.children[k];
+      var cs; try { cs = getComputedStyle(ch); } catch (e) { continue; }
+      if (cs.display === 'none' || cs.visibility === 'hidden' || cs.position === 'fixed') continue;
+      var rc = rectOf(ch);
+      if (rc.width < 2 || rc.height < 2) continue;
+      if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+      cands.push(rc);
+    }
+    if (cands.length >= 2) {
+      var w0 = cands[0].width, h0 = cands[0].height, ok = true;
+      for (var q = 1; q < cands.length; q++)
+        if (Math.abs(cands[q].width - w0) > 2 || Math.abs(cands[q].height - h0) > 2) ok = false;
+      if (ok) return { kind: 'multi-frame', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  el.setAttribute('data-om-frame', '');
+  return { kind: 'single-canvas', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: rootPxW, height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (__m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + Math.ceil(f.width) + 'px ' +
+        Math.ceil(f.height) + 'px;margin:0}' +
+        'html,body,[data-om-frame-wrap]{padding:0!important;margin:0!important;background:none!important}' +
+        '[data-om-frame]{margin:0!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

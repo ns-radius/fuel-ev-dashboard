@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/radius-velocity-design-system-0a984d65-e4b9-4e8e-80da-c710c9ba6306/tokens/fonts.css">
+  <script src="_ds/radius-velocity-design-system-0a984d65-e4b9-4e8e-80da-c710c9ba6306/_ds_bundle.js"></script>
+  <style>
+    .wf-link { color:#3f4248; text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+    .wf-loz { display:inline-flex; align-items:center; justify-content:center; width:95px; height:18px; border-radius:9999px; font-size:9px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }
+    .wf-hatch { background-image:repeating-linear-gradient(45deg,#cfcfd2 0 4px,#e7e7e9 4px 8px); }
+    .wf-hatch-overlay { background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.55) 0 2px,transparent 2px 5px); }
+    .wf-map { background-color:#ececed; background-image:linear-gradient(#e0e0e2 1px,transparent 1px),linear-gradient(90deg,#e0e0e2 1px,transparent 1px); background-size:48px 48px; }
+  </style>
+</helmet>
+<div style="min-height:100vh; background:#e9e9ea; padding:40px; box-sizing:border-box; font-family:Manrope,system-ui,sans-serif; color:#1c1d20;">
+
+  <!-- frame meta -->
+  <div style="width:1480px; margin:0 auto 14px; display:flex; align-items:baseline; justify-content:space-between;">
+    <div style="font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:#6f727a;">Velocity Dashboard · Lo-fi Wireframe</div>
+    <div style="font-size:12px; color:#9a9da3;">Desktop · 1440px content · structure only — colour, brand &amp; final components applied in hi-fi</div>
+  </div>
+
+  <!-- page frame -->
+  <div style="width:1480px; margin:0 auto; background:#ffffff; border:1px solid #d9d9d9; border-radius:10px; box-sizing:border-box; padding:32px 20px;">
+
+    <!-- ============ 5.1 PAGE HEADER ============ -->
+    <header style="display:flex; flex-direction:column; gap:14px; padding-bottom:24px; border-bottom:1px solid #ededee;">
+      <div style="display:flex; align-items:flex-end; gap:24px;">
+        <div style="display:flex; flex-direction:column; gap:6px; width:230px; flex-shrink:0;">
+          <span style="font-size:11px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:#9a9da3;">Date range</span>
+          <div style="display:flex; align-items:center; gap:10px; height:44px; padding:0 16px; background:#f7f7f8; border:1px solid #c4c4c7; border-radius:10px; min-width:230px; justify-content:space-between;">
+            <span style="font-size:14px; font-weight:600;">Last 30 days</span>
+            <span style="font-size:13px; color:#6f727a;">1 Jun – 30 Jun 2026 ▾</span>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:6px; align-items:center; text-align:center;">
+          <h1 style="margin:0; font-size:30px; font-weight:700; letter-spacing:-0.02em;">Fuel &amp; Charge Cards</h1>
+          <div style="font-size:13px; color:#9a9da3;">Northgate Logistics Ltd · Account #4471082</div>
+        </div>
+        <div style="flex-shrink:0; display:flex; align-items:flex-end; justify-content:flex-end; gap:10px;">
+          <span style="display:inline-flex; align-items:center; gap:6px; height:44px; padding:0 16px; border-radius:10px; background:#fff; border:1px solid #c4c4c7; color:#1c1d20; font-size:13px; font-weight:600; cursor:pointer; white-space:nowrap;">↓ Download PDF</span>
+          <span style="display:inline-flex; align-items:center; gap:6px; height:44px; padding:0 16px; border-radius:10px; background:#fff; border:1px solid #c4c4c7; color:#1c1d20; font-size:13px; font-weight:600; cursor:pointer; white-space:nowrap;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"></path><path d="M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="7" rx="1"></rect></svg>Print</span>
+          <span onClick="{{ scrollToMap }}" style="display:inline-flex; align-items:center; gap:6px; height:44px; padding:0 16px; border-radius:10px; background:#fff; border:1px solid #c4c4c7; color:#1c1d20; font-size:13px; font-weight:600; cursor:pointer; white-space:nowrap;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6.5v13.5L9 17.5l6 2.5 6-2.5V4l-6 2.5L9 4z"></path><path d="M9 4v13.5"></path><path d="M15 6.5V20"></path></svg>Map</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ 5.2b FUEL vs EV COMPARISON ============ -->
+    <!-- combined totals row -->
+    <section style="margin-top:32px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Total Transactions</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">1,284</span>
+      </div>
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Total Net Spend</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">£68,450</span>
+      </div>
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Total Cards</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">28</span>
+      </div>
+    </section>
+
+    <!-- duplicated totals row + latest invoice -->
+    <section style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px;">
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Total Transactions</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">1,284</span>
+      </div>
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Total Net Spend</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">£68,450</span>
+      </div>
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Total Cards</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">28</span>
+      </div>
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <span style="font-size:13px; color:#6f727a;">Latest Invoice</span>
+        <span style="font-size:28px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums;">£1,168.90</span>
+      </div>
+    </section>
+
+    <!-- split: fuel (left) vs ev (right) -->
+    <section style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+      <!-- FUEL SIDE -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="width:14px; height:12px; background:#bcbcc0; border-radius:2px;"></span>
+          <h2 style="margin:0; font-size:16px; font-weight:700;">Fuel</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:stretch;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#f7f7f8; border-radius:8px; padding:14px 16px; cursor:pointer;" style-hover="box-shadow:0 0 0 1.5px #c4c6c9; background:#f0f1f2;">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:#6f727a;">Total Fuel Transactions</span>
+              <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">1,042</span>
+              <span style="font-size:11px; color:#9a9da3;">Avg. 58 transactions / card • 18 cards</span>
+            </div>
+            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" style="flex-shrink:0; overflow:visible;"><polyline points="2,24 12,22 22,25 32,19 42,17 52,15 61,12 70,9" fill="none" stroke="#8d9095" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="70" cy="9" r="2.2" fill="#6f727a"></circle></svg>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#f7f7f8; border-radius:8px; padding:14px 16px; cursor:pointer;" style-hover="box-shadow:0 0 0 1.5px #c4c6c9; background:#f0f1f2;">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:#6f727a;">Total Fuel Spend</span>
+              <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">£52,934</span>
+              <span style="font-size:11px; color:#9a9da3;">Avg. £1,176.31 / driver · 45 drivers</span>
+            </div>
+            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" style="flex-shrink:0; overflow:visible;"><polyline points="2,26 12,23 22,24 32,20 42,16 52,17 61,13 70,8" fill="none" stroke="#8d9095" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="70" cy="8" r="2.2" fill="#6f727a"></circle></svg>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#f7f7f8; border-radius:8px; padding:14px 16px; cursor:pointer;" style-hover="box-shadow:0 0 0 1.5px #c4c6c9; background:#f0f1f2;">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:#6f727a;">Total Volume</span>
+              <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">48,210 L</span>
+              <span style="font-size:11px; color:#9a9da3;">Avg. 46.3 L / transaction</span>
+            </div>
+            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" style="flex-shrink:0; overflow:visible;"><polyline points="2,22 12,21 22,23 32,18 42,19 52,15 61,14 70,11" fill="none" stroke="#8d9095" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="70" cy="11" r="2.2" fill="#6f727a"></circle></svg>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#f7f7f8; border-radius:8px; padding:14px 16px; cursor:pointer;" style-hover="box-shadow:0 0 0 1.5px #c4c6c9; background:#f0f1f2;">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:#6f727a;">Average Price / L</span>
+              <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">142.8 p</span>
+            </div>
+            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" style="flex-shrink:0; overflow:visible;"><polyline points="2,16 12,12 22,18 32,14 42,20 52,13 61,17 70,15" fill="none" stroke="#8d9095" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="70" cy="15" r="2.2" fill="#6f727a"></circle></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- EV SIDE -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span class="wf-hatch" style="width:14px; height:12px; border-radius:2px;"></span>
+          <h2 style="margin:0; font-size:16px; font-weight:700;">EV</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:stretch;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#f7f7f8; border-radius:8px; padding:14px 16px; cursor:pointer;" style-hover="box-shadow:0 0 0 1.5px #c4c6c9; background:#f0f1f2;">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:#6f727a;">Total EV Transactions</span>
+              <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">242</span>
+              <span style="font-size:11px; color:#9a9da3;">Avg. 24 transactions / card • 10 cards</span>
+            </div>
+            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" style="flex-shrink:0; overflow:visible;"><polyline points="2,28 12,26 22,27 32,21 42,17 52,14 61,10 70,5" fill="none" stroke="#8d9095" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="70" cy="5" r="2.2" fill="#6f727a"></circle></svg>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#f7f7f8; border-radius:8px; padding:14px 16px; cursor:pointer;" style-hover="box-shadow:0 0 0 1.5px #c4c6c9; background:#f0f1f2;">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:#6f727a;">Total EV Spend</span>
+              <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">£13,515</span>
+              <span style="font-size:11px; color:#9a9da3;">Avg. £901.03 / driver · 15 drivers</span>
+            </div>
+            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" style="flex-shrink:0; overflow:visible;"><polyline points="2,27 12,25 22,22 32,23 42,18 52,15 61,12 70,7" fill="none" stroke="#8d9095" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="70" cy="7" r="2.2" fill="#6f727a"></circle></svg>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#f7f7f8; border-radius:8px; padding:14px 16px; cursor:pointer;" style-hover="box-shadow:0 0 0 1.5px #c4c6c9; background:#f0f1f2;">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:#6f727a;">Total Charge</span>
+              <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">17,108 kWh</span>
+              <span style="font-size:11px; color:#9a9da3;">Avg. 70.7 kWh / transaction</span>
+            </div>
+            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" style="flex-shrink:0; overflow:visible;"><polyline points="2,29 12,26 22,24 32,22 42,19 52,16 61,11 70,6" fill="none" stroke="#8d9095" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="70" cy="6" r="2.2" fill="#6f727a"></circle></svg>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#f7f7f8; border-radius:8px; padding:14px 16px; cursor:pointer;" style-hover="box-shadow:0 0 0 1.5px #c4c6c9; background:#f0f1f2;">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:#6f727a;">Average Price / kWh</span>
+              <span style="font-size:22px; font-weight:700; line-height:1.1; font-variant-numeric:tabular-nums; white-space:nowrap;">79.0 p</span>
+            </div>
+            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" style="flex-shrink:0; overflow:visible;"><polyline points="2,8 12,10 22,9 32,13 42,12 52,16 61,18 70,21" fill="none" stroke="#8d9095" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="70" cy="21" r="2.2" fill="#6f727a"></circle></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5.3 CARDS OVERVIEW ============ -->
+    <section style="margin-top:32px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+      <!-- FUEL CARDS PANEL -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">Fuel Cards</h2>
+          <div style="display:flex; gap:16px; font-size:13px;">
+            <span class="wf-link">Manage Cards</span>
+            <span class="wf-link">Order Cards</span>
+          </div>
+        </div>
+        <!-- column header -->
+        <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:#9a9da3; padding-bottom:8px; border-bottom:1px solid #ededee;">
+          <span>Brand</span>
+          <span>Cards</span>
+          <span style="text-align:center;">Status (A · E · S)</span>
+          <span style="text-align:right;">Spend</span>
+        </div>
+        <!-- brand rows -->
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <!-- row -->
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span class="wf-loz" style="background:#FBCE07; color:#000000;">Shell</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">8 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">6</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-weight:700; border:1px solid #8a8d92; border-radius:9999px; padding:1px 8px; cursor:pointer;">2 exp ↗</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£24,180.40</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span class="wf-loz" style="background:#009D00; color:#ffffff;">BP</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">5 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">5</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£15,902.10</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span class="wf-loz" style="background:#0047BA; color:#ffffff;">Esso</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">3 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">2</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-weight:700; border:1px solid #8a8d92; border-radius:9999px; padding:1px 8px; cursor:pointer;">1 exp ↗</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£9,640.75</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span class="wf-loz" style="background:#FF0014; color:#ffffff;">Texaco</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">2 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">1</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-weight:700; border:1px solid #8a8d92; border-radius:9999px; padding:1px 8px;">1 stop</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£3,210.55</span>
+          </div>
+        </div>
+        <!-- panel total -->
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid #ededee;">
+          <span style="font-size:13px; color:#6f727a;">18 fuel cards total</span>
+          <span style="font-size:15px; font-weight:700; font-variant-numeric:tabular-nums;">£52,933.80</span>
+        </div>
+      </div>
+
+      <!-- EV CARDS PANEL -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">EV Charge Cards</h2>
+          <div style="display:flex; gap:16px; font-size:13px;">
+            <span class="wf-link">Manage Cards</span>
+            <span class="wf-link">Order Cards</span>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:#9a9da3; padding-bottom:8px; border-bottom:1px solid #ededee;">
+          <span>Network</span>
+          <span>Cards</span>
+          <span style="text-align:center;">Status (A · E · S)</span>
+          <span style="text-align:right;">Spend</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span style="font-size:14px; font-weight:600;">BP Pulse</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">4 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">4</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£6,420.18</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span style="font-size:14px; font-weight:600;">Shell Recharge</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">3 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">2</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-weight:700; border:1px solid #8a8d92; border-radius:9999px; padding:1px 8px; cursor:pointer;">1 exp ↗</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£3,980.42</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span style="font-size:14px; font-weight:600;">Pod Point</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">2 cards</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">2</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£2,115.80</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1.2fr 0.6fr 1.1fr 1fr; gap:12px; align-items:center;">
+            <span style="font-size:14px; font-weight:600;">Gridserve</span>
+            <span style="font-size:13px; color:#6f727a; font-variant-numeric:tabular-nums;">1 card</span>
+            <div style="display:flex; justify-content:center; gap:6px;">
+              <span style="font-size:12px; font-variant-numeric:tabular-nums;">1</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+              <span style="font-size:12px; color:#9a9da3;">·</span>
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; color:#9a9da3;">0</span>
+            </div>
+            <span style="text-align:right; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums;">£999.00</span>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid #ededee;">
+          <span style="font-size:13px; color:#6f727a;">10 charge cards total</span>
+          <span style="font-size:15px; font-weight:700; font-variant-numeric:tabular-nums;">£13,515.40</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5.4b ALERTS ROW (duplicate — counts only) ============ -->
+    <section style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+      <!-- FUEL ALERTS (counts only) -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">Fuel Alerts</h2>
+          <span class="wf-link" style="font-size:13px;">View all alerts →</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; background:#5a5d62;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Critical</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">3</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:2px; background:#a8abb0;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Warning</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">7</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Info</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">2</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EV ALERTS (counts only) -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">EV Alerts</h2>
+          <span class="wf-link" style="font-size:13px;">View all alerts →</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; background:#5a5d62;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Critical</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">1</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:2px; background:#a8abb0;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Warning</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">4</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Info</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5.4c ALERTS ROW (Fuel alerts table) ============ -->
+    <section style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+      <!-- FUEL ALERTS (counts + table) -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">Fuel Alerts</h2>
+          <span class="wf-link" style="font-size:13px;">View all alerts →</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; background:#5a5d62;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Critical</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">3</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:2px; background:#a8abb0;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Warning</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">7</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Info</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">2</span>
+          </div>
+        </div>
+        <!-- alerts table (5 rows visible, rest scroll) -->
+        <div style="max-height:300px; overflow-y:auto; overflow-x:hidden; border:1px solid #ededee; border-radius:8px;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px; color:#3f4248;">
+            <thead>
+              <tr>
+                <th style="position:sticky; top:0; z-index:1; background:#1c1d20; color:#fff; font-weight:600; font-size:11px; text-align:center; padding:10px 8px; white-space:nowrap;">Status</th>
+                <th style="position:sticky; top:0; z-index:1; background:#1c1d20; color:#fff; font-weight:600; font-size:11px; text-align:left; padding:10px 10px; white-space:nowrap;">Card</th>
+                <th style="position:sticky; top:0; z-index:1; background:#1c1d20; color:#fff; font-weight:600; font-size:11px; text-align:left; padding:10px 10px; white-space:nowrap;">Alert</th>
+                <th style="position:sticky; top:0; z-index:1; background:#1c1d20; color:#fff; font-weight:600; font-size:11px; text-align:left; padding:10px 10px; white-space:nowrap;">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Critical" style="display:inline-block; width:11px; height:11px; border-radius:50%; background:#5a5d62; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*7890</span><span style="color:#9a9da3;">John Smith</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Volume alert</span><span style="color:#9a9da3;">33.06 litres over 25 litres</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Esso Warrington</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">28/06/26 18:56</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Critical" style="display:inline-block; width:11px; height:11px; border-radius:50%; background:#5a5d62; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*4821</span><span style="color:#9a9da3;">Dele Okafor</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Volume alert</span><span style="color:#9a9da3;">92.4 litres over 90 litres</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Shell M6 Lymm</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">28/06/26 06:14</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Warning" style="display:inline-block; width:11px; height:11px; border-radius:2px; background:#a8abb0; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*1043</span><span style="color:#9a9da3;">Sarah Hughes</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Time alert</span><span style="color:#9a9da3;">Transaction outside working hours</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">BP Knutsford</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">27/06/26 23:12</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Warning" style="display:inline-block; width:11px; height:11px; border-radius:2px; background:#a8abb0; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*6627</span><span style="color:#9a9da3;">Mark Reilly</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Frequency alert</span><span style="color:#9a9da3;">4th fill within 24 hours</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Texaco Salford</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">27/06/26 14:38</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Info" style="display:inline-block; width:11px; height:11px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*3390</span><span style="color:#9a9da3;">Priya Patel</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Product alert</span><span style="color:#9a9da3;">Super unleaded on diesel card</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Shell Trafford Park</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">27/06/26 09:05</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Warning" style="display:inline-block; width:11px; height:11px; border-radius:2px; background:#a8abb0; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*5512</span><span style="color:#9a9da3;">Tom Bennett</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Volume alert</span><span style="color:#9a9da3;">28.7 litres over 25 litres</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Esso Warrington</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">26/06/26 17:43</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Critical" style="display:inline-block; width:11px; height:11px; border-radius:50%; background:#5a5d62; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*2008</span><span style="color:#9a9da3;">Aisha Khan</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Frequency alert</span><span style="color:#9a9da3;">3 fills within 2 hours</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">BP Stretford</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">26/06/26 12:20</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Info" style="display:inline-block; width:11px; height:11px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*9145</span><span style="color:#9a9da3;">Liam Carter</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Time alert</span><span style="color:#9a9da3;">Transaction outside working hours</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Shell M6 Lymm</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">25/06/26 22:01</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Warning" style="display:inline-block; width:11px; height:11px; border-radius:2px; background:#a8abb0; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*7734</span><span style="color:#9a9da3;">Grace Owens</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Product alert</span><span style="color:#9a9da3;">Premium fuel on standard card</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Texaco Salford</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">25/06/26 08:47</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; text-align:center; vertical-align:top;"><span title="Info" style="display:inline-block; width:11px; height:11px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*6671</span><span style="color:#9a9da3;">Daniel Ford</span></div></td>
+                <td style="padding:8px 10px; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Volume alert</span><span style="color:#9a9da3;">26.2 litres over 25 litres</span></div></td>
+                <td style="padding:8px 10px; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Esso Eccles</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">24/06/26 19:15</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- EV ALERTS (counts only) -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px; font-weight:700;">EV Alerts</h2>
+          <span class="wf-link" style="font-size:13px;">View all alerts →</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; background:#5a5d62;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Critical</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">1</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:2px; background:#a8abb0;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Warning</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">4</span>
+          </div>
+          <div style="flex:1; border:1px solid #d9d9d9; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:10px; height:10px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box;"></span>
+              <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:#6f727a;">Info</span>
+            </div>
+            <span style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">0</span>
+          </div>
+        </div>
+        <!-- EV alerts table (5 rows visible, rest scroll) -->
+        <div style="max-height:300px; overflow-y:auto; overflow-x:hidden; border:1px solid #ededee; border-radius:8px;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px; color:#3f4248;">
+            <thead>
+              <tr>
+                <th style="position:sticky; top:0; z-index:1; background:#1c1d20; color:#fff; font-weight:600; font-size:11px; text-align:center; padding:10px 8px; white-space:nowrap;">Status</th>
+                <th style="position:sticky; top:0; z-index:1; background:#1c1d20; color:#fff; font-weight:600; font-size:11px; text-align:left; padding:10px 10px; white-space:nowrap;">Card</th>
+                <th style="position:sticky; top:0; z-index:1; background:#1c1d20; color:#fff; font-weight:600; font-size:11px; text-align:left; padding:10px 10px; white-space:nowrap;">Alert</th>
+                <th style="position:sticky; top:0; z-index:1; background:#1c1d20; color:#fff; font-weight:600; font-size:11px; text-align:left; padding:10px 10px; white-space:nowrap;">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Critical" style="display:inline-block; width:11px; height:11px; border-radius:50%; background:#5a5d62; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*2210</span><span style="color:#9a9da3;">Owen Davies</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Session failed</span><span style="color:#9a9da3;">Driver may be stranded</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Gridserve Rugby</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">28/06/26 20:11</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Warning" style="display:inline-block; width:11px; height:11px; border-radius:2px; background:#a8abb0; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*8830</span><span style="color:#9a9da3;">Hannah Lewis</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">High tariff alert</span><span style="color:#9a9da3;">Charged at 89p/kWh peak rate</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">BP Pulse Macclesfield</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">28/06/26 07:32</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Warning" style="display:inline-block; width:11px; height:11px; border-radius:2px; background:#a8abb0; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*4417</span><span style="color:#9a9da3;">Raj Singh</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Long dwell alert</span><span style="color:#9a9da3;">Possible overstay charges</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Shell Recharge Trafford</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">27/06/26 21:05</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Warning" style="display:inline-block; width:11px; height:11px; border-radius:2px; background:#a8abb0; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*6102</span><span style="color:#9a9da3;">Chloe Turner</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Long dwell alert</span><span style="color:#9a9da3;">Possible overstay charges</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Pod Point Altrincham</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">27/06/26 13:48</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Info" style="display:inline-block; width:11px; height:11px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*9931</span><span style="color:#9a9da3;">James Wright</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Time alert</span><span style="color:#9a9da3;">Session outside working hours</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">BP Pulse Knutsford</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">27/06/26 02:14</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Warning" style="display:inline-block; width:11px; height:11px; border-radius:2px; background:#a8abb0; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*3344</span><span style="color:#9a9da3;">Megan Hill</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">High tariff alert</span><span style="color:#9a9da3;">Charged at 85p/kWh peak rate</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Gridserve Rugby</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">26/06/26 18:20</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Info" style="display:inline-block; width:11px; height:11px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*7788</span><span style="color:#9a9da3;">Adam Foster</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Frequency alert</span><span style="color:#9a9da3;">3 sessions within 4 hours</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Shell Recharge Trafford</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">26/06/26 11:09</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Critical" style="display:inline-block; width:11px; height:11px; border-radius:50%; background:#5a5d62; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*1205</span><span style="color:#9a9da3;">Sofia Romano</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Session failed</span><span style="color:#9a9da3;">Driver may be stranded</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Pod Point Altrincham</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">25/06/26 23:40</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; border-bottom:1px solid #ededee; text-align:center; vertical-align:top;"><span title="Warning" style="display:inline-block; width:11px; height:11px; border-radius:2px; background:#a8abb0; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*5567</span><span style="color:#9a9da3;">Ben Walsh</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Long dwell alert</span><span style="color:#9a9da3;">Possible overstay charges</span></div></td>
+                <td style="padding:8px 10px; border-bottom:1px solid #ededee; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">BP Pulse Macclesfield</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">25/06/26 09:55</span></div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 8px; text-align:center; vertical-align:top;"><span title="Info" style="display:inline-block; width:11px; height:11px; border-radius:50%; border:2px solid #a8abb0; box-sizing:border-box; margin-top:2px;"></span></td>
+                <td style="padding:8px 10px; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600; font-variant-numeric:tabular-nums;">*6690</span><span style="color:#9a9da3;">Ella Greene</span></div></td>
+                <td style="padding:8px 10px; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Time alert</span><span style="color:#9a9da3;">Session outside working hours</span></div></td>
+                <td style="padding:8px 10px; vertical-align:top;"><div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Gridserve Rugby</span><span style="color:#9a9da3; font-variant-numeric:tabular-nums;">24/06/26 17:02</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5.5 SPEND & VOLUME (full width) ============ -->
+    <section style="margin-top:32px;">
+
+      <!-- CHART PANEL -->
+      <div style="border:1px solid #d9d9d9; border-radius:10px; padding:24px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <h2 style="margin:0; font-size:16px; font-weight:700;">Spend &amp; Volume</h2>
+            <span style="font-size:12px; color:#9a9da3;">Trailing 8 weeks · 5 May – 30 Jun 2026</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <!-- metric toggle -->
+            <div style="display:flex; border:1px solid #c4c4c7; border-radius:8px; overflow:hidden;">
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; background:#1c1d20; color:#fff;">Spend</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; border-left:1px solid #c4c4c7; cursor:pointer;">Volume</span>
+            </div>
+            <!-- series toggle -->
+            <div style="display:flex; border:1px solid #c4c4c7; border-radius:8px; overflow:hidden;">
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; cursor:pointer;">Fuel</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; border-left:1px solid #c4c4c7; cursor:pointer;">EV</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; background:#1c1d20; color:#fff; border-left:1px solid #c4c4c7;">Both</span>
+            </div>
+            <!-- sync toggle -->
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="width:34px; height:18px; border-radius:9999px; background:#d9d9d9; position:relative; display:inline-block;"><span style="position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:50%; background:#fff; border:1px solid #b9b9b9;"></span></span>
+              <span style="font-size:12px; color:#6f727a;">Sync to date range</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- bar chart placeholder -->
+        <div style="display:flex; gap:14px;">
+          <!-- y axis -->
+          <div style="display:flex; flex-direction:column; justify-content:space-between; align-items:flex-end; height:220px; font-size:11px; color:#b0b3b8; font-variant-numeric:tabular-nums; padding-bottom:22px;">
+            <span>£12k</span><span>£9k</span><span>£6k</span><span>£3k</span><span>£0</span>
+          </div>
+          <!-- plot -->
+          <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+            <div style="display:grid; grid-template-columns:repeat(8,1fr); gap:18px; height:220px; align-items:end; border-bottom:1px solid #d9d9d9;">
+              <!-- week groups: fuel solid + ev hatched -->
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:62%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:24%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:70%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:28%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:55%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:22%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:80%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:33%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:72%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:30%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:88%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:38%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:76%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:34%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+              <div style="display:flex; gap:5px; align-items:end; justify-content:center; height:100%;"><div style="width:18px; height:92%; display:flex; flex-direction:column;"><span style="height:6%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:18%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:46%; background:#8d9095; flex-shrink:0;"></span></div><div style="width:18px; height:42%; position:relative; display:flex; flex-direction:column;"><span style="height:7%; background:#d3d6da; border-radius:3px 3px 0 0; flex-shrink:0;"></span><span style="height:16%; background:#bcbfc4; flex-shrink:0;"></span><span style="height:30%; background:#a5a8ad; flex-shrink:0;"></span><span style="height:47%; background:#8d9095; flex-shrink:0;"></span><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:3px 3px 0 0; pointer-events:none;"></span></div></div>
+            </div>
+            <!-- x axis -->
+            <div style="display:grid; grid-template-columns:repeat(8,1fr); gap:18px; font-size:11px; color:#b0b3b8; text-align:center; font-variant-numeric:tabular-nums;">
+              <span>W19</span><span>W20</span><span>W21</span><span>W22</span><span>W23</span><span>W24</span><span>W25</span><span>W26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- legend (segment colours = brand / network) -->
+        <div style="display:flex; flex-direction:column; gap:10px; padding-top:8px; border-top:1px solid #ededee;">
+          <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+            <span style="font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:#9a9da3; width:56px;">Fuel</span>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="width:14px; height:12px; border-radius:2px; background:#8d9095;"></span><span style="font-size:12px; color:#6f727a;">Shell</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="width:14px; height:12px; border-radius:2px; background:#a5a8ad;"></span><span style="font-size:12px; color:#6f727a;">BP</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="width:14px; height:12px; border-radius:2px; background:#bcbfc4;"></span><span style="font-size:12px; color:#6f727a;">Esso</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="width:14px; height:12px; border-radius:2px; background:#d3d6da;"></span><span style="font-size:12px; color:#6f727a;">Texaco</span></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+            <span style="font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:#9a9da3; width:56px;">EV</span>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="position:relative; width:14px; height:12px; border-radius:2px; background:#8d9095; display:inline-block;"><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:2px;"></span></span><span style="font-size:12px; color:#6f727a;">BP Pulse</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="position:relative; width:14px; height:12px; border-radius:2px; background:#a5a8ad; display:inline-block;"><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:2px;"></span></span><span style="font-size:12px; color:#6f727a;">Shell Recharge</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="position:relative; width:14px; height:12px; border-radius:2px; background:#bcbfc4; display:inline-block;"><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:2px;"></span></span><span style="font-size:12px; color:#6f727a;">Pod Point</span></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span style="position:relative; width:14px; height:12px; border-radius:2px; background:#d3d6da; display:inline-block;"><span class="wf-hatch-overlay" style="position:absolute; inset:0; border-radius:2px;"></span></span><span style="font-size:12px; color:#6f727a;">Gridserve</span></div>
+          </div>
+          <span style="font-size:11px; color:#b0b3b8;">Hatched bars = EV · solid bars = fuel. Shades become brand colours in hi-fi.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5.6 STATION MAP + SIDEBAR ============ -->
+    <section id="station-map" style="margin-top:32px; display:grid; grid-template-columns:1fr 280px; gap:32px; align-items:start;">
+      <div style="border:1px solid #d9d9d9; border-radius:10px; overflow:hidden;">
+        <!-- map header -->
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:18px 24px; border-bottom:1px solid #ededee;">
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <h2 style="margin:0; font-size:16px; font-weight:700;">Fuel &amp; Charge Station Map</h2>
+            <span style="font-size:12px; color:#9a9da3;">Stations used this period · click a pin for detail</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <!-- legend -->
+            <div style="display:flex; gap:14px;">
+              <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px; height:12px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); background:#7c7f84;"></span><span style="font-size:12px; color:#6f727a;">Fuel</span></div>
+              <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px; height:12px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); border:2px solid #7c7f84; box-sizing:border-box;"></span><span style="font-size:12px; color:#6f727a;">EV</span></div>
+            </div>
+            <!-- filter toggle -->
+            <div style="display:flex; border:1px solid #c4c4c7; border-radius:8px; overflow:hidden;">
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; cursor:pointer;">Fuel</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; color:#6f727a; border-left:1px solid #c4c4c7; cursor:pointer;">EV</span>
+              <span style="font-size:12px; font-weight:600; padding:7px 14px; background:#1c1d20; color:#fff; border-left:1px solid #c4c4c7;">Both</span>
+            </div>
+            <!-- full screen -->
+            <span title="Full screen" style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border:1px solid #c4c4c7; border-radius:8px; cursor:pointer; color:#3f4248;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6V2.5a.5.5 0 0 1 .5-.5H6"></path><path d="M14 6V2.5a.5.5 0 0 0-.5-.5H10"></path><path d="M2 10v3.5a.5.5 0 0 0 .5.5H6"></path><path d="M14 10v3.5a.5.5 0 0 1-.5.5H10"></path></svg>
+            </span>
+          </div>
+        </div>
+        <!-- map body -->
+        <div class="wf-map" style="position:relative; height:680px;">
+          <!-- cluster -->
+          <div style="position:absolute; left:30%; top:38%; width:48px; height:48px; border-radius:50%; background:#7c7f84; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; transform:translate(-50%,-50%); border:3px solid #fff;">24</div>
+          <!-- fuel pins (solid) -->
+          <div style="position:absolute; left:52%; top:30%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#7c7f84; border:2px solid #fff;"></div>
+          <div style="position:absolute; left:66%; top:55%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#7c7f84; border:2px solid #fff;"></div>
+          <div style="position:absolute; left:44%; top:64%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#7c7f84; border:2px solid #fff;"></div>
+          <div style="position:absolute; left:78%; top:34%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#7c7f84; border:2px solid #fff;"></div>
+          <!-- ev pins (outline) -->
+          <div style="position:absolute; left:60%; top:44%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#fff; border:2px solid #7c7f84;"></div>
+          <div style="position:absolute; left:72%; top:66%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#fff; border:2px solid #7c7f84;"></div>
+          <div style="position:absolute; left:38%; top:48%; width:20px; height:20px; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); background:#fff; border:2px solid #7c7f84;"></div>
+          <!-- sample pin tooltip -->
+          <div style="position:absolute; left:52%; top:30%; transform:translate(-50%,-130%); background:#fff; border:1px solid #c4c4c7; border-radius:8px; padding:8px 12px; min-width:150px; display:flex; flex-direction:column; gap:2px;">
+            <span style="font-size:12px; font-weight:700;">Shell · M6 Lymm</span>
+            <span style="font-size:11px; color:#9a9da3;">38 transactions · £4,210.55</span>
+          </div>
+          <!-- layers switcher (bottom-left) -->
+          <div style="position:absolute; left:16px; bottom:16px; display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #c4c4c7; border-radius:8px; padding:9px 12px; cursor:pointer;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3f4248" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 8 12 13l9.5-5L12 3z"></path><path d="M2.5 12 12 17l9.5-5"></path><path d="M2.5 16 12 21l9.5-5"></path></svg>
+            <span style="font-size:12px; font-weight:600; color:#3f4248;">Layers</span>
+            <span style="font-size:11px; color:#9a9da3;">▾</span>
+          </div>
+          <!-- map controls (bottom-right) -->
+          <div style="position:absolute; right:16px; bottom:16px; display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; flex-direction:column; background:#fff; border:1px solid #c4c4c7; border-radius:8px; overflow:hidden;">
+              <span title="Zoom in" style="width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size:20px; line-height:1; color:#3f4248; cursor:pointer;">+</span>
+              <span title="Zoom out" style="width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size:20px; line-height:1; color:#3f4248; cursor:pointer; border-top:1px solid #ededee;">−</span>
+            </div>
+            <span title="Reset view" style="width:36px; height:36px; display:flex; align-items:center; justify-content:center; background:#fff; border:1px solid #c4c4c7; border-radius:8px; color:#3f4248; cursor:pointer;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 2.6-6.4"></path><path d="M3 4v4h4"></path></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR (right of map) -->
+      <aside style="display:flex; flex-direction:column; gap:20px;">
+        <!-- invoice summary -->
+        <div style="border:1px solid #d9d9d9; border-radius:10px; padding:20px; display:flex; flex-direction:column; gap:12px;">
+          <h3 style="margin:0; font-size:14px; font-weight:700;">Latest Invoice</h3>
+          <div style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+            <div style="display:flex; justify-content:space-between;"><span style="color:#6f727a;">Period</span><span style="font-weight:600;">May 2026</span></div>
+            <div style="display:flex; justify-content:space-between;"><span style="color:#6f727a;">Total</span><span style="font-weight:700; font-variant-numeric:tabular-nums;">£1,168.90</span></div>
+            <div style="display:flex; justify-content:space-between;"><span style="color:#6f727a;">Due</span><span style="font-weight:600;">14 June 2026</span></div>
+            <div style="display:flex; justify-content:space-between; align-items:center;"><span style="color:#6f727a;">Status</span><span style="font-size:12px; font-weight:600; border:1px solid #8a8d92; border-radius:9999px; padding:1px 10px;">Outstanding</span></div>
+          </div>
+          <span class="wf-link" style="font-size:13px;">View invoice →</span>
+        </div>
+
+        <!-- insights pdf -->
+        <div style="border:1px solid #d9d9d9; border-radius:10px; padding:20px; display:flex; flex-direction:column; gap:10px;">
+          <h3 style="margin:0; font-size:14px; font-weight:700;">Latest Insights</h3>
+          <div style="display:flex; gap:12px; align-items:center;">
+            <span style="width:38px; height:46px; border:1px solid #c4c4c7; border-radius:4px; background:#f7f7f8; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#8a8d92;">PDF</span>
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <span style="font-size:13px; font-weight:600;">Fuel &amp; EV Insight – May 2026</span>
+              <span style="font-size:12px; color:#9a9da3;">Generated 28 Jun 2026</span>
+            </div>
+          </div>
+          <span class="wf-link" style="font-size:13px;">Download report →</span>
+        </div>
+
+        <!-- marketing cross-sell (subtle, delineated) -->
+        <div style="border:1px solid #d9d9d9; border-radius:10px; padding:20px; background:#f7f7f8; display:flex; flex-direction:column; gap:10px;">
+          <span style="font-size:14px; font-weight:700;">Switch to Kinesis Telematics</span>
+          <span style="font-size:12px; color:#6f727a; line-height:1.5;">See live vehicle tracking and driver performance stats.</span>
+          <span class="wf-link" style="font-size:13px;">Learn more →</span>
+        </div>
+
+        <!-- quick links -->
+        <div style="border:1px solid #d9d9d9; border-radius:10px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+          <h3 style="margin:0; font-size:14px; font-weight:700;">Quick Links</h3>
+          <div style="display:flex; gap:12px; align-items:center; cursor:pointer;">
+            <span style="width:38px; height:38px; flex-shrink:0; border:1px solid #c4c4c7; border-radius:8px; background:#f7f7f8; display:flex; align-items:center; justify-content:center; color:#6f727a;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"></circle><path d="M12 7v6"></path><circle cx="12" cy="16.5" r="0.4" fill="currentColor"></circle></svg>
+            </span>
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <span style="font-size:13px; font-weight:600;">Report a problem</span>
+              <span style="font-size:12px; color:#9a9da3;">Submit a support ticket</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:center; cursor:pointer;">
+            <span style="width:38px; height:38px; flex-shrink:0; border:1px solid #c4c4c7; border-radius:8px; background:#f7f7f8; display:flex; align-items:center; justify-content:center; color:#6f727a;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.2-6.5-10A6.5 6.5 0 0 1 12 4.5a6.5 6.5 0 0 1 6.5 6.5C18.5 15.8 12 21 12 21z"></path><circle cx="12" cy="11" r="2.2"></circle></svg>
+            </span>
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <span style="font-size:13px; font-weight:600;">Radius e-route</span>
+              <span style="font-size:12px; color:#9a9da3;">Find fuel and EV charging stations</span>
+            </div>
+          </div>
+        </div>
+        <span style="font-size:11px; color:#9a9da3;">Account created 04/11/2019.</span>
+        <span style="font-size:11px; color:#9a9da3;">Main contact: John Smith · +440123556677</span>
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeModal }}" style="position:fixed; inset:0; background:rgba(20,21,24,0.45); display:flex; align-items:center; justify-content:center; z-index:50; padding:24px; font-family:Manrope,system-ui,sans-serif;">
+    <div onClick="{{ stop }}" style="background:#fff; border-radius:12px; border:1px solid #d9d9d9; width:760px; max-width:100%; padding:28px; display:flex; flex-direction:column; gap:18px;">
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <h2 style="margin:0; font-size:20px; font-weight:700; color:#1c1d20;">{{ chart.title }}</h2>
+          <span style="font-size:12px; color:#9a9da3;">{{ chart.period }}</span>
+        </div>
+        <span onClick="{{ closeModal }}" style="cursor:pointer; font-size:24px; line-height:1; color:#6f727a; padding:2px 6px;">×</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:12px;">
+        <span style="font-size:30px; font-weight:700; font-variant-numeric:tabular-nums; color:#1c1d20;">{{ chart.current }}</span>
+        <span style="font-size:13px; color:#6f727a;">{{ chart.trend }}</span>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <div style="display:flex; flex-direction:column; justify-content:space-between; align-items:flex-end; height:200px; font-size:10px; color:#b0b3b8; font-variant-numeric:tabular-nums;">
+          <sc-for list="{{ chart.yLabels }}" as="l" hint-placeholder-count="5"><span>{{ l }}</span></sc-for>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <svg width="100%" viewBox="0 0 560 200" preserveAspectRatio="none" style="display:block; height:200px; overflow:visible;">
+            <sc-for list="{{ chart.gridY }}" as="gy" hint-placeholder-count="5"><line x1="0" x2="560" y1="{{ gy }}" y2="{{ gy }}" stroke="#ededee" stroke-width="1" vector-effect="non-scaling-stroke"></line></sc-for>
+            <polyline points="{{ chart.bigPoints }}" fill="none" stroke="#8d9095" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <circle cx="{{ chart.dotX }}" cy="{{ chart.dotY }}" r="3" fill="#6f727a" vector-effect="non-scaling-stroke"></circle>
+          </svg>
+          <div style="display:flex; justify-content:space-between; font-size:10px; color:#b0b3b8; font-variant-numeric:tabular-nums;">
+            <sc-for list="{{ chart.xLabels }}" as="l" hint-placeholder-count="8"><span>{{ l }}</span></sc-for>
+          </div>
+        </div>
+      </div>
+      <span style="font-size:11px; color:#b0b3b8;">Illustrative trend · wireframe placeholder data</span>
+    </div>
+  </div>
+</sc-if></x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: null };
+
+  componentDidMount() {
+    if (window.__sparkClick) document.removeEventListener('click', window.__sparkClick, true);
+    const handler = (e) => {
+      let n = e.target;
+      let box = null;
+      while (n && n.nodeType === 1) {
+        if (n.tagName === 'DIV' && n.querySelector(':scope > svg polyline') && /247|f7f7f8/i.test(n.getAttribute('style') || '')) { box = n; break; }
+        n = n.parentElement;
+      }
+      if (!box) return;
+      const pl = box.querySelector(':scope > svg polyline');
+      const pts = pl.getAttribute('points');
+      const sy = pts.trim().split(/\s+/).map(p => parseFloat(p.split(',')[1]));
+      const spans = box.querySelectorAll(':scope > div > span');
+      const title = spans[0] ? spans[0].textContent.trim() : 'Trend';
+      const current = spans[1] ? spans[1].textContent.trim() : '';
+      this.setState({ open: { title, current, sy } });
+    };
+    window.__sparkClick = handler;
+    document.addEventListener('click', handler, true);
+
+    if (window.__sparkKey) document.removeEventListener('keydown', window.__sparkKey);
+    const key = (e) => { if (e.key === 'Escape') this.setState({ open: null }); };
+    window.__sparkKey = key;
+    document.addEventListener('keydown', key);
+  }
+
+  fmt(v, prefix, suffix, decimals) {
+    const r = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-GB');
+    return prefix + r + suffix;
+  }
+
+  renderVals() {
+    const o = this.state.open;
+    let chart = null;
+    if (o && o.sy && o.sy.length) {
+      const W = 560, H = 200, n = o.sy.length;
+      const pts = o.sy.map((v, i) => [(i / (n - 1)) * W, (v / 32) * H]);
+      const bigPoints = pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+      const dot = pts[n - 1];
+      const gridY = [0, 1, 2, 3, 4].map(j => ((j / 4) * H).toFixed(1));
+      const weeks = ['W19', 'W20', 'W21', 'W22', 'W23', 'W24', 'W25', 'W26'];
+      const xLabels = weeks.slice(0, n);
+
+      // value scale from current value + latest sparkline point (value ∝ 32 - sy)
+      const s = o.current || '';
+      const numMatch = s.replace(/[, ]/g, '').match(/[\d.]+/);
+      const V = numMatch ? parseFloat(numMatch[0]) : 0;
+      const prefix = s.trim().charAt(0) === '£' ? '£' : '';
+      let suffix = '', decimals = 0;
+      if (/kWh/.test(s)) suffix = ' kWh';
+      else if (/\bL\b/.test(s)) suffix = ' L';
+      else if (/\bp\b/.test(s)) { suffix = ' p'; decimals = 1; }
+      const syLast = o.sy[n - 1];
+      const k = (32 - syLast) !== 0 ? V / (32 - syLast) : V / 32;
+      const yMax = k * 32;
+      const yLabels = [0, 1, 2, 3, 4].map(j => this.fmt(yMax * (1 - j / 4), prefix, suffix, decimals));
+
+      const vFirst = k * (32 - o.sy[0]);
+      const pct = vFirst ? ((V - vFirst) / vFirst) * 100 : 0;
+      const trend = (pct >= 0 ? '▲ ' : '▼ ') + Math.abs(pct).toFixed(0) + '% vs start of period';
+
+      chart = { title: o.title, current: o.current, period: 'Trailing 8 weeks · 5 May – 30 Jun 2026', trend, bigPoints, dotX: dot[0].toFixed(1), dotY: dot[1].toFixed(1), gridY, yLabels, xLabels };
+    }
+    return {
+      modalOpen: !!o,
+      chart,
+      closeModal: () => this.setState({ open: null }),
+      stop: (e) => e.stopPropagation(),
+      scrollToMap: () => { const el = document.getElementById('station-map'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 16, behavior: 'smooth' }); },
+    };
+  }
+}
+</script>
+</body>
+</html>
