@@ -674,7 +674,7 @@
         <sc-if value="{{ showAcctStatus }}" hint-placeholder-val="{{ false }}">
         <div style="background:#fff; border:1px solid #d9d9d9; border-radius:10px; padding:16px 22px; display:flex; flex-direction:column; gap:14px; box-sizing:border-box; min-width:0; font-size:13px; color:#6f727a; line-height:1.4;">
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:6px 28px; align-content:start;">
-          <span>{{ lblAcctStatus }}: <span style="color:#000; font-weight:600;">{{ lblActive }}</span></span>
+          <span>{{ lblAcctStatus }}: <span style="color:#000; font-weight:600; display:inline-flex; align-items:center; gap:6px;"><span title="{{ lblAcctStatusTooltip }}" style="flex:0 0 auto; width:10px; height:10px; border-radius:3px; background:#0FD46C;"></span>{{ lblActive }}</span></span>
           <span>{{ lblAcctUsers }}: <span style="color:#000; font-weight:600;">4</span></span>
           <span>{{ lblLogins7 }}: <span style="color:#000; font-weight:600;">15</span></span>
           </div>
@@ -1056,8 +1056,9 @@ class Component extends DCLogic {
     'Activate': 'Aktivieren',
     'Never': 'Nie',
     'Never logged in': 'Nie angemeldet',
-    'Logged in within the past month': 'Im letzten Monat angemeldet',
-    'Not logged in in the past month': 'Im letzten Monat nicht angemeldet',
+    'User logged in within past month': 'Im letzten Monat angemeldet',
+    'Customer linked to users and has logged in within the past month': 'Kunde ist mit Nutzern verknüpft und hat sich im letzten Monat angemeldet',
+    'User has not logged in within past month': 'Im letzten Monat nicht angemeldet',
     'Reset password': 'Passwort zurücksetzen',
   };
   t(s) { return this.state.lang === 'de' ? (this.DE[s] || s) : s; }
@@ -1067,8 +1068,8 @@ class Component extends DCLogic {
     const now = new Date('2026-07-24T00:00:00');
     const monthAgo = new Date(now); monthAgo.setMonth(monthAgo.getMonth() - 1);
     return d >= monthAgo
-      ? { color: '#0FD46C', label: 'Logged in within the past month' }
-      : { color: '#F2C94C', label: 'Not logged in in the past month' };
+      ? { color: '#0FD46C', label: 'User logged in within past month' }
+      : { color: '#F2C94C', label: 'User has not logged in within past month' };
   }
   vuLoginValue(login) {
     if (login === 'Never') return -Infinity;
@@ -2114,6 +2115,7 @@ class Component extends DCLogic {
       lblDaily: this.t('Daily'), lblWeekly: this.t('Weekly'), lblTotals: this.t('Totals'),
       lblAcctCreated: this.t('Account created'), lblMainContact: this.t('Main contact'), lblContactTel: this.t('Contact tel'), lblSpendThreshold: this.t('Spend threshold'),
       lblAcctStatus: this.t('Account status'), lblAcctUsers: this.t('Account users'), lblLogins7: this.t('Logins 7 days'), lblNewUser: this.t('New user'), lblViewUsers: this.t('View users'),
+      lblAcctStatusTooltip: this.t('Customer linked to users and has logged in within the past month'),
       lblLatestInvoice: this.t('Latest invoice'), lblVelosCards: this.t('Velos cards'), lblQuickLinks: this.t('Quick links'),
       lblInvoicesTitle: this.t('Fuel card invoices'),
       lblNetworksTitle: this.t('Networks'),
@@ -2182,7 +2184,7 @@ class Component extends DCLogic {
       stoppedBg: this.state.viewMode === 'no-expiring' ? '#f7f7f8' : 'rgba(229,27,34,0.08)',
       showAcctStatus: this.state.viewMode === 'sales-agent',
       showKpiArrow: this.state.viewMode !== 'no-expiring',
-      showCrossSell: this.state.viewMode !== 'sales-agent',
+      showCrossSell: true,
       dashModeClass: this.state.viewMode === 'sales-agent' ? 'is-sales-agent' : '',
       setLangEn: (e) => { e.stopPropagation(); this.setState({ lang: 'en', langOpen: false }); },
       setLangDe: (e) => { e.stopPropagation(); this.setState({ lang: 'de', langOpen: false }); },
